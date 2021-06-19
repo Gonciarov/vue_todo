@@ -1,19 +1,24 @@
 <template>
   <v-app id="inspire">
-      <v-navigation-drawer v-model="drawer"
+      <v-navigation-drawer 
+      v-model="drawer"
+      :mobile-breakpoint="768"
       app>
-      <v-list-item>
-        <v-list-item-content>
-          <v-list-item-title class="title">
-            Todo List
-          </v-list-item-title>
-          <v-list-item-subtitle>
-            Don't be lazy, do it
-          </v-list-item-subtitle>
-        </v-list-item-content>
-      </v-list-item>
 
-      <v-divider></v-divider>
+<v-img
+  class="pa-4 pt-5"
+  height="170"
+  src="https://picsum.photos/id/11/500/300"
+  gradient="to top right, rgba(19,84,122,.5), rgba(128,208,199,.8)">
+
+  <v-avatar size="100" class="mb-2">
+    <img
+  src="https://scontent.flhr1-2.fna.fbcdn.net/v/t1.6435-9/141104558_10158076182801743_2657202474725968494_n.jpg?_nc_cat=110&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=nVS6fiPYuo0AX8xJRD7&_nc_ht=scontent.flhr1-2.fna&oh=389a1580df5819dc36f0aeb3af3b3822&oe=60D22870"
+  color="primary"
+  size="56"
+></v-avatar>
+<div class="white--text text-subtitle-1 font-weight-bold">Ilja Gonciarov</div>
+</v-img>
 
       <v-list
         dense
@@ -51,7 +56,7 @@
         ></v-img>
       </template>
 
-      <v-container>
+      <v-container class="header-container pa-0">
         <v-row>
           <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
           <v-spacer></v-spacer>
@@ -93,3 +98,9 @@
        }
   }
 </script>
+
+<style lang="sass">
+.header-container 
+  max-width: none !important
+
+</style>
