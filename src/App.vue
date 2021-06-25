@@ -13,7 +13,7 @@
 
   <v-avatar size="100" class="mb-2">
     <img
-  src="https://scontent.flhr1-2.fna.fbcdn.net/v/t1.6435-9/141104558_10158076182801743_2657202474725968494_n.jpg?_nc_cat=110&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=nVS6fiPYuo0AX8xJRD7&_nc_ht=scontent.flhr1-2.fna&oh=389a1580df5819dc36f0aeb3af3b3822&oe=60D22870"
+  src="https://scontent.flhr1-2.fna.fbcdn.net/v/t1.6435-9/141104558_10158076182801743_2657202474725968494_n.jpg?_nc_cat=110&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=mbKS6-rKN5EAX96zdJS&_nc_ht=scontent.flhr1-2.fna&oh=622c0fffe7fefc4e5cc79613ea4c547c&oe=60DA1170"
   color="primary"
   size="56"
 ></v-avatar>
@@ -63,7 +63,7 @@
           <search />
         </v-row>
          <v-row>
-           <v-toolbar-title class="text-h4 ml-4">My magic Todo</v-toolbar-title>
+           <v-toolbar-title class="text-h4 ml-4"> {{ $store.state.appTitle }} </v-toolbar-title>
         </v-row>
         <v-row>
           <live-date-time />
@@ -91,6 +91,7 @@
           { title: 'About', icon: 'mdi-help-box', to: '/about' },
         ]
        }),
+
        components: {
          'search': require('@/components/Tools/Search.vue').default,
          'live-date-time': require('@/components/Tools/LiveDateTime.vue').default,
