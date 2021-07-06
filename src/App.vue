@@ -47,7 +47,7 @@
       dark
       
       src="https://picsum.photos/1920/1080?random"
-      height="240"
+      :height="$route.path === '/' ? '240' : '170'"
     >
       <template v-slot:img="{ props }">
         <v-img
@@ -68,7 +68,7 @@
         <v-row>
           <live-date-time />
         </v-row>
-        <v-row>
+        <v-row v-if="$route.path === '/'">
            <field-add-task/>
         </v-row>
       </v-container>
