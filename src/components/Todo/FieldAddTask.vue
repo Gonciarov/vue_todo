@@ -4,7 +4,7 @@
             @keyup.enter='addTask'
             class="pa-3"
             outlined
-            label="Add Task"
+            placeholder="Add Task"
             hide-details
             clearable
           >
@@ -12,7 +12,7 @@
           <template v-slot:append>
               <v-icon
               @click="addTask"
-              color="primary"
+             
               :disabled="newTaskTitleInvalid"
               >
                 mdi-plus

@@ -9,7 +9,7 @@
   class="pa-4 pt-5"
   height="170"
   src="https://picsum.photos/id/11/500/300"
-  gradient="to top right, rgba(19,84,122,.5), rgba(128,208,199,.8)">
+  gradient="to top right, rgba(19,84,122,.9), rgba(128,208,199,.8)">
 
   <v-avatar size="100" class="mb-2">
     <img
@@ -47,7 +47,7 @@
       dark
       
       src="https://picsum.photos/1920/1080?random"
-      height="170"
+      height="240"
     >
       <template v-slot:img="{ props }">
         <v-img
@@ -67,6 +67,9 @@
         </v-row>
         <v-row>
           <live-date-time />
+        </v-row>
+        <v-row>
+           <field-add-task/>
         </v-row>
       </v-container>
 
@@ -91,9 +94,12 @@
           { title: 'About', icon: 'mdi-help-box', to: '/about' },
         ]
        }),
-
+        mounted() {
+          this.$store.dispatch('getTasks')
+        },
        components: {
          'search': require('@/components/Tools/Search.vue').default,
+         'field-add-task': require('@/components/Todo/FieldAddTask.vue').default,
          'live-date-time': require('@/components/Tools/LiveDateTime.vue').default,
          'snackbar': require('@/components/Shared/Snackbar.vue').default
        }
